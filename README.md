@@ -21,10 +21,15 @@ the knowledge base of the agent in the path of the .pl file given and produces f
     infinity stones
 - ironman ((2,2), [], s0). --> predicate to define the initial situation of Ironman {initial
     location, empty list of stones (no stones collected yet), initial situation s0}
-    Example Output:
+    Example Output:  
+    
+    
+![alt text](https://raw.githubusercontent.com/NadeenAhmad/Successor-State-Axiom-in-Prolog/master/image1.JPG)  
+
 
 - A discussion of the syntax and semantics of the action terms and predicate symbols you
-employ.
+employ.  
+![alt text](https://raw.githubusercontent.com/NadeenAhmad/Successor-State-Axiom-in-Prolog/master/image2.JPG)    
 
 The predefined predicate in Prolog include/1 is used to import the knowledge base in the output
 file of the Java method within the Endgame.pl that defines the successor state axiom.
@@ -39,8 +44,8 @@ Actions:
 - Left --> when ironman translates from Y+1 to Y
 
 
-- A discussion of your implementation of the successor-state axioms.
-
+- A discussion of your implementation of the successor-state axioms.  
+![alt text](https://raw.githubusercontent.com/NadeenAhmad/Successor-State-Axiom-in-Prolog/master/image3.JPG)    
 We implemented a successor state axiom to represent the fluent of ironman. Since we will
 query with the goal state our implementation totally relies on back-tracking from the goal state
 to the initial state in the knowledge base. The first case represents the situation of the goal;
@@ -69,8 +74,8 @@ because of the Depth first search, useless actions will occupy a huge space of t
 prolonging the computation of queries.
 
 
-- A description of the predicate snapped(S) used to query the KB to generate the plan.
-
+- A description of the predicate snapped(S) used to query the KB to generate the plan.  
+![alt text](https://raw.githubusercontent.com/NadeenAhmad/Successor-State-Axiom-in-Prolog/master/image4.JPG)    
 Our predicate snapped calls the predicate representing the successor state axiom of ironman
 with the goal state {coordinates of the enemy Thanos (the goal location), a list containing the
 locations of the 4 collected infinity stones, situation S}. Using call with depth limit is because
@@ -81,7 +86,8 @@ and B to the coordinates ironman must reach to achieve the goal state.
 
 - At least two running examples from your implementation.
 
-Example #1: 5,5;1,2;3,4;1,1,2,1,2,2,3,
+Example #1: 5,5;1,2;3,4;1,1,2,1,2,2,3,  
+![alt text](https://raw.githubusercontent.com/NadeenAhmad/Successor-State-Axiom-in-Prolog/master/image5.JPG)    
 
 **0 1 2 3 4
 0
@@ -120,8 +126,8 @@ result (right, result (collect, result (down, result (collect, result (left, s0)
 
 **true.**
 
-Example #2: 5,5;2,2;0,4;2,1,1,1,1,2,1,
-
+Example #2: 5,5;2,2;0,4;2,1,1,1,1,2,1,  
+![alt text](https://raw.githubusercontent.com/NadeenAhmad/Successor-State-Axiom-in-Prolog/master/image5.JPG)    
 **0 1 2 3 4
 0** T
 **1** S S S
